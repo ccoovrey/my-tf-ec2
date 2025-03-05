@@ -24,7 +24,7 @@ jobs:
       - name: Initialize the Terraform Configuration
         run: tflocal init --var-file local.tfvars
       - name: Validate Terraform Configuration
-        run: tflocal validate --var-file local.tfvars
+        run: tflocal validate 
       - name: Run Terraform Plan
         run: tflocal plan --var-file local.tfvars
       - name: Run Terraform Apply
