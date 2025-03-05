@@ -4,7 +4,7 @@ env                           = "local"
 alias                        = "edge_provider"
 access_key                   = "test_access_key"
 secret_key                   = "test_secret_key"
-region                       = "us-east-1"
+aws_region                   = "us-east-1"
 
 s3_use_path_style            = true
 skip_credentials_validation  = true
