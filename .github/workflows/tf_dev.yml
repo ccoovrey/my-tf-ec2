@@ -17,13 +17,11 @@ jobs:
           echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
           sudo apt update
           sudo apt install terraform
-      - name: Install tflocal
-        run: pip install terraform-local
       - name: Initialize the Terraform Configuration
-        run: tflocal init --var-file dev.tfvars
+        run: terraform init --var-file dev.tfvars
       - name: Validate Terraform Configuration
-        run: tflocal validate 
+        run: terraform validate 
       - name: Run Terraform Plan
-        run: tflocal plan --var-file dev.tfvars
+        run: terraform plan --var-file dev.tfvars
       - name: Run Terraform Apply
-        run: tflocal apply -auto-approve --var-file dev.tfvars
+        run: terraform apply -auto-approve --var-file dev.tfvars
