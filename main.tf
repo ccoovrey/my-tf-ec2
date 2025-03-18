@@ -12,7 +12,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "ec2" {
-  ami = "ami-032598fcc7e9d1c7a"      # ami is located specifically in a region
+  ami = "ami-08b5b3a93ed654d19"      # ami is located in us-east-1 
   instance_type = "t2.micro"
   security_groups = [aws_security_group.webtraffic.name]
 }
