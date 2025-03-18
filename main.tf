@@ -8,7 +8,7 @@ terraform {
 }
 
 resource "aws_instance" "ec2" {
-  ami = "ami-032598fcc7e9d1c7a"
+  ami = "ami-032598fcc7e9d1c7a"      # ami is located specifically in a region
   instance_type = "t2.micro"
   security_groups = [aws_security_group.webtraffic.name]
 }

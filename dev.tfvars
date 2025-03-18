@@ -1,3 +1,3 @@
-env                           = "dev"
-alias                        = "developmentr"
-aws_region                   = "us-east-1"
+#env                           = "dev"
+#alias                        = "developmentr"
+#availability_zone             = "us-east-1a"
