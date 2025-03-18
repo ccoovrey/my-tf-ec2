@@ -18,10 +18,10 @@ jobs:
           sudo apt update
           sudo apt install terraform
       - name: Initialize the Terraform Configuration
-        run: terraform init 
+        run: terraform init  --var-file dev.tfvars
       - name: Validate Terraform Configuration
-        run: terraform validate 
+        run: terraform validate --var-file dev.tfvars
       - name: Run Terraform Plan
-        run: terraform plan 
+        run: terraform plan --var-file dev.tfvars
       - name: Run Terraform Apply
-        run: terraform apply -auto-approve 
+        run: terraform apply -auto-approve --var-file dev.tfvars
