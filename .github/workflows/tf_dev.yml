@@ -4,8 +4,8 @@ on:
   workflow_dispatch: {}
   
 env:
-  ACCESS_KEY: ${{ secrets.AccessKey }}
-  SECRET_KEY: ${{ secrets.SecretKey }}
+  AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_KEY }}
 jobs:
   terraform-dev-configuration:
     runs-on: ubuntu-latest
@@ -17,8 +17,6 @@ jobs:
           echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
           sudo apt update
           sudo apt install terraform
-          export AWS_ACCESS_KEY_ID="$ACCESS_KEY"
-          export AWS_SECRET_ACCESS_KEY="$SECRET_KEY"
       - name: Install tflocal
         run: pip install terraform-local
       - name: Initialize the Terraform Configuration
