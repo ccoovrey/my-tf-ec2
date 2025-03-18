@@ -3,9 +3,12 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 4.16"
-      region = var.aws_region
     }
   }
+}
+
+provider "aws" {
+    region = "us-east-1"
 }
 
 resource "aws_instance" "ec2" {
